@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - 任务管理</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">TaskFlow</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="index.html" class="nav-link active">
+                <span class="nav-icon">📊</span>
+                <span>仪表盘</span>
+            </a></li>
+            <li><a href="pages/tasks.html" class="nav-link">
+                <span class="nav-icon">✓</span>
+                <span>任务列表</span>
+            </a></li>
+            <li><a href="pages/new-task.html" class="nav-link">
+                <span class="nav-icon">➕</span>
+                <span>新建任务</span>
+            </a></li>
+            <li><a href="pages/categories.html" class="nav-link">
+                <span class="nav-icon">🏷️</span>
+                <span>分类管理</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <h1>仪表盘</h1>
+            <div class="header-actions">
+                <input type="text" class="search-input" placeholder="搜索任务...">
+                <div class="user-avatar">👤</div>
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="stat-card fade-in">
+                <div class="stat-icon">📋</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="total-tasks">0</span>
+                    <span class="stat-label">总任务</span>
+                </div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-icon completed">✓</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="completed-tasks">0</span>
+                    <span class="stat-label">已完成</span>
+                </div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-icon pending">⏱️</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="pending-tasks">0</span>
+                    <span class="stat-label">进行中</span>
+                </div>
+            </div>
+            <div class="stat-card fade-in">
+                <div class="stat-icon overdue">⚠️</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="overdue-tasks">0</span>
+                    <span class="stat-label">已逾期</span>
+                </div>
+            </div>
+        </div>
+
+        <section class="section slide-up">
+            <h2>进行中的任务</h2>
+            <div class="task-list" id="active-tasks">
+                <!-- 任务将通过 JavaScript 动态加载 -->
+            </div>
+        </section>
+
+        <section class="section slide-up">
+            <h2>即将到期</h2>
+            <div class="task-list" id="upcoming-tasks">
+                <!-- 任务将通过 JavaScript 动态加载 -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

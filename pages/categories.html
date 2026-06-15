@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分类管理 - TaskFlow</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">TaskFlow</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="../index.html" class="nav-link">
+                <span class="nav-icon">📊</span>
+                <span>仪表盘</span>
+            </a></li>
+            <li><a href="tasks.html" class="nav-link">
+                <span class="nav-icon">✓</span>
+                <span>任务列表</span>
+            </a></li>
+            <li><a href="new-task.html" class="nav-link">
+                <span class="nav-icon">➕</span>
+                <span>新建任务</span>
+            </a></li>
+            <li><a href="categories.html" class="nav-link active">
+                <span class="nav-icon">🏷️</span>
+                <span>分类管理</span>
+            </a></li>
+        </ul>
+    </nav>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <h1>分类管理</h1>
+        </header>
+
+        <div class="form-container slide-up">
+            <form id="category-form" class="category-form">
+                <div class="form-group">
+                    <label for="category-name">分类名称</label>
+                    <input type="text" id="category-name" class="form-input" required placeholder="输入分类名称">
+                </div>
+
+                <div class="form-group">
+                    <label for="category-color">颜色</label>
+                    <div class="color-picker">
+                        <input type="color" id="category-color" class="color-input" value="#6366f1">
+                        <span class="color-preview" id="color-preview">#6366f1</span>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">添加分类</button>
+                </div>
+            </form>
+        </div>
+
+        <section class="section slide-up">
+            <h2>现有分类</h2>
+            <div class="category-list" id="category-list">
+                <!-- 分类将通过 JavaScript 动态加载 -->
+            </div>
+        </section>
+    </main>
+
+    <div class="modal" id="delete-modal">
+        <div class="modal-content">
+            <h3>确认删除</h3>
+            <p>确定要删除这个分类吗？相关任务将移至"未分类"。</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="cancel-delete">取消</button>
+                <button class="btn btn-danger" id="confirm-delete">删除</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/storage.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/categories.js"></script>
+</body>
+</html>
